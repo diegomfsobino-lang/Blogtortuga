@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comprar - Blog Tortuga</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#e8f5e9;
+  color:#1f2937;
+}
+
+.navbar{
+  padding:15px 40px;
+  background:white;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-weight:900;
+  text-decoration:none;
+  color:#333;
+  font-size:20px;
+}
+
+.menu a{
+  margin-left:14px;
+  text-decoration:none;
+  color:#555;
+  font-weight:700;
+}
+.menu a:hover{ color:#f59e0b; }
+
+.cart-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 18px;
+  border-radius:999px;
+  background:#ffe600;
+  color:#0033a0;
+  font-weight:900;
+  text-decoration:none;
+  border:2px solid rgba(0,0,0,0.06);
+  box-shadow:0 6px 14px rgba(0,0,0,0.10);
+}
+.cart-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:60px 20px;
+  text-align:center;
+}
+
+.panel{
+  background:white;
+  border-radius:18px;
+  padding:26px;
+  box-shadow:0 8px 18px rgba(0,0,0,0.08);
+}
+
+.big-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:18px;
+  padding:14px 22px;
+  border-radius:999px;
+  background:#ffe600;      /* ML */
+  color:#0033a0;           /* ML */
+  font-weight:900;
+  text-decoration:none;
+  border:2px solid rgba(0,0,0,0.06);
+  box-shadow:0 10px 22px rgba(0,0,0,0.12);
+}
+.big-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(0.98);
+}
+
+.note{
+  margin-top:14px;
+  color:#6b7280;
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <a class="logo" href="index.html">🐢 Blog Tortuga</a>
+
+  <div class="menu">
+    <a href="blog.html">Blog</a>
+    <a href="moldes.html">Moldes</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+
+  <a class="cart-btn" href="comprar.html">🛒 Comprar</a>
+</nav>
+
+<div class="container">
+  <div class="panel">
+    <h1>Comprar en Mercado Libre</h1>
+    <p>Esta página es una “puerta” para llevar a la tienda real en Mercado Libre.</p>
+
+    <!-- ✅ CAMBIA ESTE LINK por el de tu tienda Mercado Libre -->
+    <a class="big-btn" href="https://www.mercadolibre.cl/" target="_blank" rel="noopener">
+      🛒 Ir a mi tienda en Mercado Libre
+    </a>
+
+    <div class="note">
+      Nota: reemplaza el enlace por tu URL real de Mercado Libre (tu perfil o tu tienda).
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
