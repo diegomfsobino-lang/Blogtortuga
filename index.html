@@ -1,221 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Blog Tortuga</title>
 
 <style>
-
-/* ===== GENERAL ===== */
-
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#e8f5e9;
-}
-
-/* ===== NAVBAR ===== */
+*{ box-sizing:border-box; }
+body{ margin:0; font-family:Arial, sans-serif; background:#e8f5e9; color:#1f2937; }
+a{ color:inherit; }
 
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background:white;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  position: sticky; top:0; z-index:50;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:15px 40px; background:white;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
-
-.logo{
-    font-size:22px;
-    font-weight:bold;
-    color:#333;
-}
-
-.menu{
-    list-style:none;
-    display:flex;
-    gap:25px;
-    margin:0;
-    padding:0;
-}
-
-.menu a{
-    text-decoration:none;
-    color:#555;
-    font-weight:500;
-}
-
-.menu a:hover{
-    color:#f59e0b;
-}
-
-.nav-buttons{
-    display:flex;
-    gap:10px;
-}
-
+.logo{ font-size:22px; font-weight:900; color:#333; text-decoration:none; white-space:nowrap; }
+.menu{ list-style:none; display:flex; gap:22px; margin:0; padding:0; }
+.menu a{ text-decoration:none; color:#555; font-weight:700; }
+.menu a:hover{ color:#f59e0b; }
+.nav-buttons{ display:flex; gap:10px; }
 .btn-outline{
-    padding:8px 18px;
-    border-radius:20px;
-    border:2px solid #f59e0b;
-    background:transparent;
-    color:#f59e0b;
-    cursor:pointer;
+  padding:8px 18px; border-radius:999px; border:2px solid #f59e0b;
+  background:transparent; color:#f59e0b; cursor:pointer; font-weight:900;
 }
-
 .btn-primary{
-    padding:8px 18px;
-    border-radius:20px;
-    border:none;
-    background:#f59e0b;
-    color:white;
-    cursor:pointer;
+  padding:8px 18px; border-radius:999px; border:none;
+  background:#f59e0b; color:white; cursor:pointer; font-weight:900;
 }
-
-/* ===== HERO ===== */
+.btn-outline:hover,.btn-primary:hover{ filter:brightness(0.95); }
 
 .hero{
-    position:relative;
-    min-height:520px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=80");
-    background-size:cover;
-    background-position:center;
+  position:relative; min-height:560px;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=80");
+  background-size:cover; background-position:center;
 }
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(10,46,90,0.65);
-}
-
-.hero-content{
-    position:relative;
-    max-width:900px;
-    color:white;
-    padding:20px;
-}
-
-.hero-content h1{
-    font-size:56px;
-    margin-bottom:25px;
-}
-
-/* buscador */
+.hero-overlay{ position:absolute; inset:0; background:rgba(10,46,90,0.65); }
+.hero-content{ position:relative; max-width:980px; color:white; padding:20px; }
+.hero-content h1{ font-size:clamp(34px,5vw,64px); margin:0 0 14px; font-weight:900; }
+.hero-content p{ margin:0 0 22px; font-size:18px; opacity:0.95; }
 
 .search-bar{
-    margin:auto;
-    display:flex;
-    align-items:center;
-    background:white;
-    border-radius:999px;
-    max-width:700px;
-    padding:10px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+  margin:0 auto 18px; display:flex; align-items:center; gap:10px;
+  background:white; border-radius:999px; max-width:760px; padding:10px 12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
-
-.search-bar input{
-    flex:1;
-    border:none;
-    outline:none;
-    font-size:16px;
-    padding:10px;
-}
-
+.search-bar input{ flex:1; border:none; outline:none; font-size:16px; padding:10px 6px; }
 .search-btn{
-    border:none;
-    background:#f59e0b;
-    color:white;
-    width:55px;
-    height:45px;
-    border-radius:999px;
-    cursor:pointer;
-    font-size:18px;
+  border:none; background:#f59e0b; color:white; width:56px; height:44px;
+  border-radius:999px; cursor:pointer; font-size:18px;
 }
+.search-btn:hover{ filter:brightness(0.95); }
 
-/* botones hero */
-
-.hero-actions{
-    margin-top:25px;
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
+.hero-actions{ margin-top:18px; display:flex; justify-content:center; gap:14px; flex-wrap:wrap; }
 .pill{
-    padding:12px 25px;
-    border-radius:999px;
-    text-decoration:none;
-    font-weight:bold;
+  padding:12px 26px; border-radius:999px; text-decoration:none; font-weight:900;
+  border:2px solid transparent;
 }
+.pill-primary{ background:#f59e0b; color:white; }
+.pill-light{ background:white; color:#f59e0b; border-color:#f59e0b; }
 
-.pill-primary{
-    background:#f59e0b;
-    color:white;
+.section{ max-width:1100px; margin:0 auto; padding:70px 20px; }
+.section-title{ font-size:32px; margin:0 0 10px; font-weight:900; }
+.section-subtitle{ margin:0 0 26px; color:#374151; opacity:0.9; }
+
+.grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.card{
+  background:white; border-radius:18px; box-shadow:0 8px 18px rgba(0,0,0,0.08); overflow:hidden;
 }
-
-.pill-light{
-    background:white;
-    color:#f59e0b;
-    border:2px solid #f59e0b;
+.thumb{ height:160px; background:linear-gradient(135deg, rgba(245,158,11,0.35), rgba(10,46,90,0.25)); }
+.card-body{ padding:16px; }
+.badge{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  background:#fff7ed; color:#c2410c; font-weight:900; font-size:12px;
 }
+.card h3{ margin:10px 0 8px; font-size:18px; }
+.card p{ margin:0 0 12px; color:#4b5563; }
+.row{ display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.price{ font-weight:900; font-size:18px; }
+.mini{ font-size:12px; color:#6b7280; }
 
+.footer{ background:#0b1220; color:white; padding:34px 20px; }
+.footer .inner{
+  max-width:1100px; margin:0 auto; display:flex; justify-content:space-between;
+  gap:14px; flex-wrap:wrap;
+}
+.footer a{ color:white; text-decoration:none; opacity:0.9; }
+.footer a:hover{ opacity:1; }
+
+@media (max-width:980px){ .grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:720px){
+  .navbar{ padding:12px 14px; }
+  .menu{ display:none; }
+  .grid{ grid-template-columns:1fr; }
+}
 </style>
 </head>
 
 <body>
 
-<!-- ===== MENU ===== -->
-
 <nav class="navbar">
+  <a href="index.html" class="logo">🐢 Blog Tortuga</a>
 
-    <div class="logo">🐢 Blog Tortuga</div>
+  <ul class="menu">
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="moldes.html">Moldes</a></li>
+    <li><a href="tienda.html">Tienda</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
 
-    <ul class="menu">
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Moldes</a></li>
-        <li><a href="#">Tienda</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Contacto</a></li>
-    </ul>
-
-    <div class="nav-buttons">
-        <button class="btn-outline">Acceso</button>
-        <button class="btn-primary">Comprar</button>
-    </div>
-
+  <div class="nav-buttons">
+    <button class="btn-outline">Acceso</button>
+    <button class="btn-primary">Comprar</button>
+  </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-
 <header class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Encuentra moldes y tutoriales aquí</h1>
+    <p>Blog + tienda para aprender, inspirarte y comprar moldes premium.</p>
 
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-
-        <h1>Encuentra moldes y tutoriales aquí</h1>
-
-        <div class="search-bar">
-            <input type="text" placeholder="Buscar moldes, ideas o artículos...">
-            <button class="search-btn">🔍</button>
-        </div>
-
-        <div class="hero-actions">
-            <a class="pill pill-primary" href="#">Todos los moldes</a>
-            <a class="pill pill-primary" href="#">Destacados</a>
-            <a class="pill pill-light" href="#">Publicar producto</a>
-            <a class="pill pill-light" href="#">Crea tu pedido</a>
-        </div>
-
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar moldes, ideas o artículos..." />
+      <button class="search-btn" aria-label="Buscar">🔍</button>
     </div>
 
+    <div class="hero-actions">
+      <a class="pill pill-primary" href="tienda.html">Todos los moldes</a>
+      <a class="pill pill-primary" href="tienda.html">Destacados</a>
+      <a class="pill pill-light" href="contacto.html">Publicar producto</a>
+      <a class="pill pill-light" href="contacto.html">Crea tu pedido</a>
+    </div>
+  </div>
 </header>
+
+<section class="section">
+  <h2 class="section-title">Categorías rápidas</h2>
+  <p class="section-subtitle">Sección demo de la página principal.</p>
+
+  <div class="grid">
+    <div class="card"><div class="thumb"></div><div class="card-body">
+      <span class="badge">Velas</span><h3>Moldes para velas</h3><p>Diseños premium y fáciles de desmoldar.</p>
+      <div class="row"><span class="mini">+30 diseños</span><span class="price">Ver →</span></div>
+    </div></div>
+
+    <div class="card"><div class="thumb"></div><div class="card-body">
+      <span class="badge">Jabones</span><h3>Moldes para jabones</h3><p>Estilo boutique, detalle fino.</p>
+      <div class="row"><span class="mini">+20 diseños</span><span class="price">Ver →</span></div>
+    </div></div>
+
+    <div class="card"><div class="thumb"></div><div class="card-body">
+      <span class="badge">Resina</span><h3>Moldes para resina</h3><p>Bandejas, posavasos y deco.</p>
+      <div class="row"><span class="mini">+15 sets</span><span class="price">Ver →</span></div>
+    </div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="inner">
+    <div>
+      <div style="font-weight:900; font-size:18px;">🐢 Blog Tortuga</div>
+      <div style="opacity:0.85; margin-top:6px;">Sitio de prueba • 2026</div>
+    </div>
+    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a href="blog.html">Blog</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
