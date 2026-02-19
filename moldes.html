@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Moldes - Blog Tortuga</title>
+<style>
+body{ margin:0; font-family:Arial, sans-serif; background:#e8f5e9; color:#1f2937; }
+.navbar{ padding:15px 40px; background:white; box-shadow:0 2px 8px rgba(0,0,0,0.08); display:flex; justify-content:space-between; align-items:center; }
+.logo{ font-weight:900; text-decoration:none; color:#333; }
+.menu a{ margin-left:14px; text-decoration:none; color:#555; font-weight:700; }
+.menu a:hover{ color:#f59e0b; }
+.section{ max-width:1000px; margin:0 auto; padding:50px 20px; }
+.grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.card{ background:white; border-radius:14px; padding:16px; box-shadow:0 8px 18px rgba(0,0,0,0.08); }
+.badge{ display:inline-block; padding:6px 10px; border-radius:999px; background:#fff7ed; color:#c2410c; font-weight:900; font-size:12px; }
+@media (max-width:900px){ .grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:650px){ .grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="logo" href="index.html">🐢 Blog Tortuga</a>
+  <div class="menu">
+    <a href="blog.html">Blog</a>
+    <a href="moldes.html">Moldes</a>
+    <a href="tienda.html">Tienda</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+
+<section class="section">
+  <h1>Moldes (Demo)</h1>
+  <p>Catálogo de prueba para visualizar categorías.</p>
+
+  <div class="grid">
+    <div class="card"><span class="badge">Velas</span><h3>Molde vela “Geo”</h3><p>Texto demo.</p></div>
+    <div class="card"><span class="badge">Jabones</span><h3>Molde jabón “Minimal”</h3><p>Texto demo.</p></div>
+    <div class="card"><span class="badge">Resina</span><h3>Molde “Bandeja”</h3><p>Texto demo.</p></div>
+    <div class="card"><span class="badge">Velas</span><h3>Molde “Esfera”</h3><p>Texto demo.</p></div>
+    <div class="card"><span class="badge">Jabones</span><h3>Molde “Botánico”</h3><p>Texto demo.</p></div>
+    <div class="card"><span class="badge">Resina</span><h3>Pack “Deco”</h3><p>Texto demo.</p></div>
+  </div>
+</section>
+
+</body>
+</html>
