@@ -1,58 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Tortuga</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Tortuga</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            text-align: center;
-        }
+<style>
 
-        header {
-            padding: 60px;
-            background: #1e293b;
-        }
+/* ===== GENERAL ===== */
 
-        h1 {
-            font-size: 3em;
-        }
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#e8f5e9;
+}
 
-        button {
-            padding: 15px 30px;
-            font-size: 18px;
-            border: none;
-            border-radius: 8px;
-            background: #38bdf8;
-            color: black;
-            cursor: pointer;
-        }
+/* ===== NAVBAR ===== */
 
-        button:hover {
-            background: #0ea5e9;
-        }
-    </style>
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#333;
+}
+
+.menu{
+    list-style:none;
+    display:flex;
+    gap:25px;
+    margin:0;
+    padding:0;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#555;
+    font-weight:500;
+}
+
+.menu a:hover{
+    color:#f59e0b;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.btn-outline{
+    padding:8px 18px;
+    border-radius:20px;
+    border:2px solid #f59e0b;
+    background:transparent;
+    color:#f59e0b;
+    cursor:pointer;
+}
+
+.btn-primary{
+    padding:8px 18px;
+    border-radius:20px;
+    border:none;
+    background:#f59e0b;
+    color:white;
+    cursor:pointer;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    position:relative;
+    min-height:520px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1800&q=80");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(10,46,90,0.65);
+}
+
+.hero-content{
+    position:relative;
+    max-width:900px;
+    color:white;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:56px;
+    margin-bottom:25px;
+}
+
+/* buscador */
+
+.search-bar{
+    margin:auto;
+    display:flex;
+    align-items:center;
+    background:white;
+    border-radius:999px;
+    max-width:700px;
+    padding:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.search-bar input{
+    flex:1;
+    border:none;
+    outline:none;
+    font-size:16px;
+    padding:10px;
+}
+
+.search-btn{
+    border:none;
+    background:#f59e0b;
+    color:white;
+    width:55px;
+    height:45px;
+    border-radius:999px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* botones hero */
+
+.hero-actions{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.pill{
+    padding:12px 25px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.pill-primary{
+    background:#f59e0b;
+    color:white;
+}
+
+.pill-light{
+    background:white;
+    color:#f59e0b;
+    border:2px solid #f59e0b;
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>🐢 Blog Tortuga</h1>
-    <p>Mi primera página web creada desde cero</p>
+<!-- ===== MENU ===== -->
 
-    <button onclick="saludo()">Haz click</button>
+<nav class="navbar">
+
+    <div class="logo">🐢 Blog Tortuga</div>
+
+    <ul class="menu">
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Moldes</a></li>
+        <li><a href="#">Tienda</a></li>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+
+    <div class="nav-buttons">
+        <button class="btn-outline">Acceso</button>
+        <button class="btn-primary">Comprar</button>
+    </div>
+
+</nav>
+
+<!-- ===== HERO ===== -->
+
+<header class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>Encuentra moldes y tutoriales aquí</h1>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar moldes, ideas o artículos...">
+            <button class="search-btn">🔍</button>
+        </div>
+
+        <div class="hero-actions">
+            <a class="pill pill-primary" href="#">Todos los moldes</a>
+            <a class="pill pill-primary" href="#">Destacados</a>
+            <a class="pill pill-light" href="#">Publicar producto</a>
+            <a class="pill pill-light" href="#">Crea tu pedido</a>
+        </div>
+
+    </div>
+
 </header>
-
-<script>
-function saludo() {
-    alert("¡Tu web ya funciona!");
-}
-</script>
 
 </body>
 </html>
